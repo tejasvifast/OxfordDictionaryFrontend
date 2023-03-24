@@ -12,6 +12,7 @@ function IpAddress() {
 
     useEffect(() => {
         getData()
+        //data
     }, [])
 
     const toggleFunction = () => {
