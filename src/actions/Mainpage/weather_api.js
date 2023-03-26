@@ -10,6 +10,7 @@ export const findCityWeather=(cityName)=>{
             appid:'42ad3584d4bbbe0906c2c22338536300'
         }
     }
-    const data=axios.get(`https://api.openweathermap.org/data/2.5/weather`,config)
+    const data=axios.get(`https://api.openweathermap.org/data/2.5/weather`,config)//.catch((error)=>{return error})
+    console.log(data,"datatttttttttttttttttttttt")
     return data
 }

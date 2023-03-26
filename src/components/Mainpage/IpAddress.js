@@ -23,12 +23,12 @@ function IpAddress() {
         <div className="ip-address" >
             {toggle ? (
                 <>
-                    <button onClick={() => toggleFunction()} style={{ width: '100px', backgroundColor: 'lightgreen' }}>SHOW IP</button>
+                    <button onClick={() => toggleFunction()} style={{ width: '100px', backgroundColor: 'lightgreen',borderRadius:'10px' }}>SHOW IP</button>
                     <h2 style={{ backgroundColor: 'lightgreen' }}> Your IP is Waiting</h2>
                 </>
             ) : (
                 <>
-                    <button onClick={() => toggleFunction()} style={{ width: '100px', backgroundColor: 'red' }}>HIDE IP</button>
+                    <button onClick={() => toggleFunction()} style={{ width: '100px', backgroundColor: 'red',borderRadius:'10px' }}>HIDE IP</button>
                     <h2 style={{ backgroundColor: 'lightgreen' }}>{ip}</h2>
                 </>
             )}

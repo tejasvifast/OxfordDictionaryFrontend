@@ -138,22 +138,22 @@ function Main() {
     <>
       <Appbar onDoubleClick={getData} />
       <div className="Main pt-100" style={{ paddingTop: '70px', margin: '10px' }}>
-        <div className="d-flex" style={{ display: "flex",justifyContent:'space-between' }}>
+        <div className="firstCard d-flex" style={{ display: "flex",justifyContent:'space-between',margin:'10px' }}>
         <IpAddress></IpAddress>
-        <Weather></Weather>
-        </div>
-        {searchedWord ? (<div className="searched-word" style={{ marginTop: '10px', marginBottom: '10px' }} >
+        {searchedWord ? (<div className="searched-word" >
           <h2>Searched Word</h2>
           <h4>Word : {searchedWord.word}</h4>
           <p>Meaning : {searchedWord.meaning}</p>
           <p>Grammar : {searchedWord.grammar}</p>
-        </div>) : (<div className="searched-word" style={{ marginTop: '10px', marginBottom: '10px' }} >
+        </div>) : (<div className="searched-word">
           <h2>Last Searched Word</h2>
           <h4>Word : {lastSearchedWord.word}</h4>
           <p>Meaning : {lastSearchedWord.meaning}</p>
           <p>Grammar : {lastSearchedWord.grammar}</p>
         </div>)
         }
+        <Weather></Weather>
+        </div>
         <div className="d-flex justify-content-between">
           <button onClick={() => buttonStatefunction('first')}>BootstrapTable</button>
           <button onClick={() => buttonStatefunction('second')}>MUIDataTable</button>
