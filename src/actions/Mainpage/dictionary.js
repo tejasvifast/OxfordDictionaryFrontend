@@ -1,9 +1,9 @@
 import axios from 'axios'
-import { apiUrl } from '../../index'
+import { backendApiUrl } from '../../index'
 
 export const getAllAddedWords=()=>{
     const config={}
-    const data = axios.get(`${apiUrl}getAddedWords`,config)
+    const data = axios.get(`${backendApiUrl}getAddedWords`,config)
     return data
 }
 
@@ -16,7 +16,7 @@ export const searchedWordDetail=(word)=>{
             word:word
         }
     }
-    const data=axios.post(`${apiUrl}Dictionary`,{},config)
+    const data=axios.post(`${backendApiUrl}Dictionary`,{},config)
     return data
 }
 

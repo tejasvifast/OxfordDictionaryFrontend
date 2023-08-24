@@ -69,7 +69,7 @@
 
 .table-hover{
   tbody {
-    background-color: rgb(241, 211, 231);
+    background-color: rgb(246, 245, 245);
   }
 }
 
@@ -78,7 +78,7 @@
 }
 
 .bootstrap-header{
-  background-color: rgb(61, 78, 0);
+  background-color: rgb(95, 106, 58);
 }
 .pagination-style .react-bootstrap-table-pagination {
   background-color: #0d7206;
@@ -91,13 +91,6 @@
   
 }
 
-.searched-word{
-  width: auto;
-  background-color: gainsboro;
-  border-style: groove;
-  border-radius: 2%;
-}
-
 .custom-row-class-2{
   background-color: #2f2d2d;
 }
@@ -107,15 +100,67 @@
   height: 330px;
 }
 
-.ip-address{
-  height: 100%;
+.searched-word{
+  width: 1000px;
+  background-color: rgb(203, 232, 255);
+  //border-style: groove;
+  border-radius: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.box-ip-weather{
+  height: auto;
   width: 200px;
   border: #282c34 1px solid;
-  border-radius: 5px;
+  border-radius: 20px;
+  //padding-left: 10px;
   // margin-top: '10px' !important;
   // margin-bottom : '10px' !important
 }
 
 .firstCard{
-  height: 210px;
+  height: auto;
+  display: flex;
+  justify-content:space-around;
+  margin: 10px;
+  margin-bottom: 20px;
+  
 }
+
+
+@media screen and (max-width: 700px) {
+  .firstCard{
+    height: auto;
+    //display: flex !important;
+    //justify-content:space-around;
+    flex-direction: column !important;
+    margin: 10px;
+    margin-bottom: 20px;
+    //background-color: lavender; 
+  }
+
+  .searched-word{
+    width: auto;
+    background-color: rgb(203, 232, 255);
+    //border-style: groove;
+    border-radius: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+  .box-ip-weather{
+    height: auto;
+    width: auto;
+    border: #282c34 1px solid;
+    border-radius: 20px;
+    margin: 20px;
+    //padding-left: 10px;
+    // margin-top: '10px' !important;
+    // margin-bottom : '10px' !important
+  }
+}
+
+// .firstCard{
+//   display: flex;
+//   justify-content: flex-end;
+// }

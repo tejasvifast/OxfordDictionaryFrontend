@@ -7,9 +7,10 @@ import { getAllAddedWords, searchedWordDetail } from '../../actions/Mainpage/dic
 import React from "react"
 import MUIDataTable from "mui-datatables";
 import BootstrapTable from 'react-bootstrap-table-next';
-import paginationFactory, { PaginationListStandalone } from 'react-bootstrap-table2-paginator';
+import paginationFactory from 'react-bootstrap-table2-paginator';
 import IpAddress from "./IpAddress";
 import Weather from "./Weather";
+// import Webcam from "./Webcam";
 
 function Main() {
   const [searchedWord, setSearchedWord] = useState('')
@@ -78,9 +79,9 @@ function Main() {
   }
 
   const navigate = useNavigate()
-  const paginationOptions = {
-    showTotal: true,
-  };
+  // const paginationOptions = {
+  //   showTotal: true,
+  // };
   let optionForPagination = {
     page: 1, // Specify the current page. It's necessary when remote is enabled
     sizePerPage: 10, // Specify the size per page. It's necessary when remote is enabled
@@ -137,30 +138,33 @@ function Main() {
   return (
     <>
       <Appbar onDoubleClick={getData} />
-      <div className="Main pt-100" style={{ paddingTop: '70px', margin: '10px' }}>
-        <div className="firstCard d-flex" style={{ display: "flex",justifyContent:'space-between',margin:'10px' }}>
-        <IpAddress></IpAddress>
-        {searchedWord ? (<div className="searched-word" >
-          <h2>Searched Word</h2>
-          <h4>Word : {searchedWord.word}</h4>
-          <p>Meaning : {searchedWord.meaning}</p>
-          <p>Grammar : {searchedWord.grammar}</p>
-        </div>) : (<div className="searched-word">
-          <h2>Last Searched Word</h2>
-          <h4>Word : {lastSearchedWord.word}</h4>
-          <p>Meaning : {lastSearchedWord.meaning}</p>
-          <p>Grammar : {lastSearchedWord.grammar}</p>
-        </div>)
-        }
-        <Weather></Weather>
+      <div className="Main pt-100" style={{ paddingTop: '30px', margin: '10px' }}>
+        <div className="firstCard" >
+          <IpAddress/>
+          {/* <Webcam></Webcam> */}
+          <div className="searched-word" style={{ boxShadow: '-3px 3px 3px grey' }}>
+            <h2 style={{
+              background: 'white',
+              marginLeft: '20px',
+              marginRight: '20px',
+              borderTopLeftRadius: '12px',
+              borderTopRightRadius: '12px'
+            }}>
+              {searchedWord ? 'Searched Word' : 'Last Searched Word'}
+            </h2>
+            <h4>Word : {searchedWord ? searchedWord.word : lastSearchedWord.word}</h4>
+            <p>Meaning : {searchedWord ? searchedWord.meaning : lastSearchedWord.meaning}</p>
+            <p>Grammar : {searchedWord ? searchedWord.grammar : lastSearchedWord.grammar}</p>
+          </div>
+          <Weather/>
         </div>
-        <div className="d-flex justify-content-between">
-          <button onClick={() => buttonStatefunction('first')}>BootstrapTable</button>
-          <button onClick={() => buttonStatefunction('second')}>MUIDataTable</button>
-          <button onClick={() => buttonStatefunction('third')}>ClassicalButton</button>
+        <div className="d-flex justify-content-start" style={{ height: '40px', marginBottom: '0px', display: 'flex', justifyContent: 'start' }}>
+          <button onClick={() => buttonStatefunction('first')} style={{ border: '1px solid black', height: '100%', backgroundColor: ButtonState['first'] ? 'green' : '' }} >BootstrapTable</button>
+          <button onClick={() => buttonStatefunction('second')} style={{ height: '100%', backgroundColor: ButtonState['second'] ? 'green' : '' }}>MUIDataTable</button>
+          <button onClick={() => buttonStatefunction('third')} style={{ height: '100%', backgroundColor: ButtonState['third'] ? 'green' : '' }}>ClassicalButton</button>
         </div>
         {ButtonState['first'] && <div style={{ marginBottom: '20px', borderRadius: '5px' }}>
-          <h2 style={{ backgroundColor: '#06721f' }}>React BootstrapTable Data</h2>
+          {/* <h2 style={{ backgroundColor: '#06721f',marginBottom:'0px' }}>React BootstrapTable Data</h2> */}
           <BootstrapTable
             keyField='id'
             wrapperClasses='custom-row-class-2 pagination-style'
@@ -178,7 +182,7 @@ function Main() {
         </div>}
         {ButtonState.second &&
           <>
-            <h2 style={{ backgroundColor: '#06721f' }}>MUI Tabular Data</h2>
+            {/* <h2 style={{ backgroundColor: '#06721f',marginBottom:'0px' }}>MUI Tabular Data</h2> */}
             <MUIDataTable
               title={"Employee List"}
               data={allSearchedWords}
@@ -188,7 +192,7 @@ function Main() {
           </>
         }
         {ButtonState.third && <div>
-          <h2 style={{ backgroundColor: '#06721f' }}>Button Tabular Data</h2>
+          {/* <h2 style={{ backgroundColor: '#06721f',marginBottom:'0px' }}>Button Tabular Data</h2> */}
           <div className="buttontabledata" >
             {map(allSearchedWords, (el) => {
               return (

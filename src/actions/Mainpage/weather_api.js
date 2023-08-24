@@ -11,6 +11,5 @@ export const findCityWeather=(cityName)=>{
         }
     }
     const data=axios.get(`https://api.openweathermap.org/data/2.5/weather`,config)//.catch((error)=>{return error})
-    console.log(data,"datatttttttttttttttttttttt")
     return data
 }

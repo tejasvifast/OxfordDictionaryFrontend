@@ -20,15 +20,15 @@ function IpAddress() {
     }
 
     return (
-        <div className="ip-address" >
+        <div className="box-ip-weather" style={{ boxShadow:'-3px 3px 3px lightgrey'}} >
             {toggle ? (
                 <>
-                    <button onClick={() => toggleFunction()} style={{ width: '100px', backgroundColor: 'lightgreen',borderRadius:'10px' }}>SHOW IP</button>
+                    <button onClick={() => toggleFunction()} style={{ width: '100px', backgroundColor: 'lightgreen',borderRadius:'10px', margin: '7px', height: '30px' }}>SHOW IP</button>
                     <h2 style={{ backgroundColor: 'lightgreen' }}> Your IP is Waiting</h2>
                 </>
             ) : (
                 <>
-                    <button onClick={() => toggleFunction()} style={{ width: '100px', backgroundColor: 'red',borderRadius:'10px' }}>HIDE IP</button>
+                    <button onClick={() => toggleFunction()} style={{ width: '100px', backgroundColor: 'red',borderRadius:'10px', margin: '7px', height: '30px' }}>HIDE IP</button>
                     <h2 style={{ backgroundColor: 'lightgreen' }}>{ip}</h2>
                 </>
             )}
