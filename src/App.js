@@ -7,7 +7,7 @@ import Main from './components/Mainpage/Main'
 const App = () => {
   return (
     <div className='App'>
-      <Router>
+      <Router basename="/">
         <Routes>
             <Route path="/" element={<Main/>}></Route>
             <Route path="/page" element={<Page/>}></Route>
